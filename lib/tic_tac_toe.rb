@@ -40,6 +40,7 @@ def turn(board)
 
   if valid_move?(board, index) == true
     move(board, index, current_player)
+    display_board(board)
   else
     turn(board)
   end
@@ -97,11 +98,11 @@ def winner(board)
   end
 end
 
-def play(board)
-
-    if over?(board) == true
-      puts "Congratulations" + winner(board)
-    else
-      puts "Cat's Game!"
-  end
-end
+# def play(board)
+#
+#     if over?(board) == true
+#       puts "Congratulations" + winner(board)
+#     else
+#       puts "Cat's Game!"
+#   end
+# end
