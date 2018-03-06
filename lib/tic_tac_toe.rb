@@ -103,10 +103,9 @@ def play(board)
     turn(board)
   end
 
-    if winner(board) == true && winner(board) == true
-      puts "Congratulations #{winner(board)}!"
-    else
-      puts "Cat's Game!"
-    end
-
+  if won?(board) == true && winner(board) == true
+    puts "Congratulations #{winner(board)}!"
+  else
+    puts "Cat's Game!"
+  end
 end
