@@ -102,7 +102,7 @@ def play(board)
   until over?(board) == true
     turn(board)
 
-    if draw(board)) == true
+    if draw(board) == true
       puts "Cat's Game!"
 
     else
