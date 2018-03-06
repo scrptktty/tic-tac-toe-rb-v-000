@@ -98,7 +98,7 @@ def winner(board)
   #     end
   # end
   if winning_combo = won?(board)
-    binding.pry
+    board[winning_combo.first]
   end
 end
 
@@ -109,7 +109,7 @@ def play(board)
 
   if won?(board)
     puts "Congratulations !"
-  else draw(board)  
+  else draw(board)
     puts "Cat's Game!"
   end
 end
