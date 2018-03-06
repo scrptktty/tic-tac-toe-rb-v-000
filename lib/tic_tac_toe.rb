@@ -1,3 +1,4 @@
+require 'pry'
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -88,24 +89,27 @@ def over?(board)
 end
 
 def winner(board)
-  WIN_COMBINATIONS.detect do |win_combo|
-    position1 = board[win_combo[0]]
-    position2 = board[win_combo[1]]
-    position3 = board[win_combo[2]]
-      if (position1 == position2 && position2 == position3) && position_taken?(board, win_combo[0])
-        return position1
-      end
+  # WIN_COMBINATIONS.detect do |win_combo|
+  #   position1 = board[win_combo[0]]
+  #   position2 = board[win_combo[1]]
+  #   position3 = board[win_combo[2]]
+  #     if (position1 == position2 && position2 == position3) && position_taken?(board, win_combo[0])
+  #       return position1
+  #     end
+  # end
+  if winning_combo = won?(board)
+    binding.pry
   end
 end
 
 def play(board)
-  until over?(board) == true
+  until over?(board)
     turn(board)
   end
 
-  if won?(board) == true && winner(board) == true
-    puts "Congratulations #{winner(board)}!"
-  else
+  if won?(board)
+    puts "Congratulations !"
+  else draw(board)  
     puts "Cat's Game!"
   end
 end
