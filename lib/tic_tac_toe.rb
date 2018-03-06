@@ -21,7 +21,7 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def move(board, index, current_player = "X")
+def move(board, index, current_player)
   board[index] = current_player
 end
 
@@ -99,11 +99,7 @@ def winner(board)
 end
 
 def play(board)
-  counter = 0
-  while counter < 9
-    turn(board)
-    counter += 1
-  end
+  
     if over?(board) == true
       puts "Congratulations" + winner(board)
     else
